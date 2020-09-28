@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<h class="filterDiv Movie">movie</h>
+    <h class="filterDiv sth">others</h>
+    <button class="btn" onclick="filterSelection('Movie')"> Movie</button>
+    <form onchange="filterType()">
+        <select class="leading_filter" name="videoType">
+            <option value="allVid">All Videos</option>
+            <option value="mov">Movie</option>
+            <option value="show">TV Show</option>
+            <option value="acg">Animation</option>
+        </select>
+    </form>-->
+    <script>
+        function run1() {
+            document.getElementById("parent").insertBefore(document.getElementById("first"), document.getElementById("sec"));
+        }
+    </script>
+    <form onchange="run1()">
+        <select class="leading_filter" name="videoType" id="type">
+            <option value="allVid">All Videos</option>
+            <option value="mov">Movie</option>
+            <option value="show">TV Show</option>
+            <option value="acg">Animation</option>
+        </select>
+    </form>
+
+    <div id="parent">
+        <p id="sec">sec</p>
+        <p id="first">first</p>
+    </div>
+
+
+</body>
+</html>

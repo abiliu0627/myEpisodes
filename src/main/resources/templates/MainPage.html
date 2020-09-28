@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Episodes</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <script src="../static/myScript.js"></script>
+        <div class="topRow">
+                <div id="mySidepanel" class="sidepanel">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+                    <form onchange="filter('videoType', false)">
+                        <select class="leading_filter" id="videoType">
+                            <option value="allVid">All Videos</option>
+                            <option value="mov">Movie</option>
+                            <option value="show">TV Show</option>
+                            <option value="acg">Animation</option>
+                        </select>
+                    </form>
+
+                    <form onchange="filter('region', false)">
+                        <select class="filter" id="region">
+                            <option value="allReg">All Regions</option>
+                            <option value="usa">American</option>
+                            <option value="eur">European</option>
+                            <option value="chi">Chinese</option>
+                            <option value="jap">Japanese</option>
+                            <option value="kor">Korean</option>
+                            <option value="ind">Indian</option>
+                        </select>
+                    </form>
+
+                    <form onchange="filter('genre', false)">
+                        <select class="filter" id="genre">
+                            <option value="allGenr">All Genres</option>
+                            <option value="act">Action</option>
+                            <option value="com">Comedy</option>
+                            <option value="thr">Thriller</option>
+                            <option value="sci">Sci-Fi</option>
+                            <option value="rom">Romance</option>
+                            <option value="mus">Musical</option>
+                            <option value="dra">Drama</option>
+                            <option value="fan">Fantasy</option>
+                        </select>
+                    </form>
+
+                    <form onchange="filter('date', false)">
+                        <select class="filter" id="date">
+                            <option value="allDates">All Release Dates</option>
+                            <option value="20">After 2020</option>
+                            <option value="15">2015-2019</option>
+                            <option value="10">2010-2014</option>
+                            <option value="05">2005-2009</option>
+                            <option value="00">2000-2004</option>
+                            <option value="90s">Before 2000</option>
+                        </select>
+                    </form>
+
+                    <form onchange="sortIt()">
+                        <select class="sort" id="sort">
+                            <option value="default_sort">Sort By</option>
+                            <option value="AI">Recommended</option>
+                            <option value="rt">Rating</option>
+                            <option value="alph">A-Z</option>
+                            <option value="new">Newest Release</option>
+                        </select>
+                    </form>
+
+                    <button class="clearBtn" onclick="clearFilters()">Clear All</button>
+
+                    <img class="sideBarFrog" src="../static/img/sideBarFrog.jpg" class="decor" alt="froggo">
+                </div>
+
+                <button class="openbtn" onclick="openNav()">☰</button>
+
+                <a href="/">
+                    <img src="../static/img/logo.jpg" class="logo" alt="froggo">
+                </a>
+                <a href="/" class="title" th:text="${title}">My Episodes</a>
+                <div class="topSearch">
+                    <div class="search-container">
+                        <form>
+                            <input class="type_box" type="text" placeholder=" Search.." name="search">
+                            <button class="search_button" type="submit">Go!</button>
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </header>
+
+    <div id="allCards">
+
+        <div class="card usa mov sci act 05">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="avatarDescription.html">
+                        <img src="../static/img/Avatar/cover.jfif" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2009</div>
+                </div>
+
+                <h4 class="card-title">Avatar</h4>
+                <br>
+                <button class="quickFilter" type="button">American</button>
+                <button class="quickFilter" type="button">Movie</button>
+                <button class="quickFilter" type="button">Sci-Fi</button>
+                <button class="quickFilter" type="button">Action</button>
+                <br>
+                <a href="https://www.youtube.com/watch?v=a0CDJZu4M5I" class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/watch?v=fPSBclqSBxQ" class="stBtn">SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()">
+            </div>
+        </div>
+
+        <div class="card chi show dra rom 20">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="NBTDescription.html">
+                        <img src="../static/img/nothingButThirty/cover.png" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2020</div>
+                </div>
+
+                <h4 class="card-title">Nothing but Thirty</h4>
+                <br>
+                <button class="quickFilter" type="button">Chinese</button>
+                <button class="quickFilter" type="button">TV Show</button>
+                <button class="quickFilter" type="button">Drama</button>
+                <button class="quickFilter" type="button">Romance</button>
+                <br>
+                <a href="https://chinaq.cc/cn200717/" class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/watch?v=29Ts9PYByAU" class="stBtn">SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div class="card jap acg fan act 20">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="BNADescription.html">
+                        <img src="../static/img/BNA/cover.jpg" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2020</div>
+                </div>
+                <h4 class="card-title">BNA: Brand New Animal</h4>
+                <br>
+                <button class="quickFilter" type="button">Japanese</button>
+                <button class="quickFilter" type="button">Animation</button>
+                <button class="quickFilter" type="button">Fantasy</button>
+                <button class="quickFilter" type="button">Action</button>
+                <br>
+                <a href="https://www.cmcm5.com/dongman/BNA.html" class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/playlist?list=PLwiJoOHUK5f-8pMNC9r6K3FlYYMQK4X1l" class="stBtn">
+                    SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div class="card eur mov rom com 00">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="amelieDescription.html">
+                        <img src="../static/img/Amelie/Cover.jpg" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2001</div>
+                </div>
+
+                <h4 class="card-title">Amélie</h4>
+                <br>
+                <button class="quickFilter" type="button">European</button>
+                <button class="quickFilter" type="button">Movie</button>
+                <button class="quickFilter" type="button">Romance</button>
+                <button class="quickFilter" type="button">Comedy</button>
+                <br>
+                <a href="https://www.dililitv.com/vplay/NTMyMy0xLTA=.html" class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/watch?v=stNg41SVRzM" class="stBtn">
+                    SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div class="card kor show thr 20">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="theFlowerOfEvil.html">
+                        <img src="../static/img/theFlowerOfEvil/Cover.jpg" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2020</div>
+                </div>
+
+                <h4 class="card-title">The Flower of Evil</h4>
+                <br>
+                <button class="quickFilter" type="button">Korean</button>
+                <button class="quickFilter" type="button">TV Show</button>
+                <button class="quickFilter" type="button">Thriller</button>
+                <br>
+                <a href="https://duonaolive.com/detail?id=56f31a7a002c47f6edb396685023142cd70f945096d6890c725edc6d40bb1467"
+                   class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/watch?v=CIZkZal_iLU&list=RDCIZkZal_iLU&start_radio=1&t=6"
+                   class="stBtn">SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div class="card usa acg com 90s">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E8%BE%9B%E6%99%AE%E6%A3%AE&submit=">
+                        <img src="../static/img/theSimpsons.jpg" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">1989</div>
+                </div>
+
+                <h4 class="card-title">The Simpsons</h4>
+                <br>
+                <button class="quickFilter" type="button">American</button>
+                <button class="quickFilter" type="button">Animation</button>
+                <button class="quickFilter" type="button">Comedy</button>
+                <br>
+                <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E8%BE%9B%E6%99%AE%E6%A3%AE&submit="
+                   class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/playlist?list=PLJLNOwjYkQIpK8A7FnLlWDEMxftEmyLqq"
+                   class="stBtn">SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div class="card ind mov com dra rom 05">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="https://duonaolive.com/play?id=d20a2aa994ddfd9c8da82a983dfc5bccbe25132d5a670df86885adc8386edd6e&episode=0&route=0">
+                        <img src="../static/img/3Idiots.jpg" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2009</div>
+                </div>
+
+                <h4 class="card-title">3 Idiots</h4>
+                <br>
+                <button class="quickFilter" type="button">Indian</button>
+                <button class="quickFilter" type="button">Movie</button>
+                <button class="quickFilter" type="button">Comedy</button>
+                <button class="quickFilter" type="button">Drama</button>
+                <button class="quickFilter" type="button">Romance</button>
+                <br>
+                <a href="https://duonaolive.com/play?id=d20a2aa994ddfd9c8da82a983dfc5bccbe25132d5a670df86885adc8386edd6e&episode=0&route=0"
+                   class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/results?search_query=3+idiots+soundtrack" class="stBtn">
+                    SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div class="card usa show dra com 05">
+            <div class="card-body">
+
+                <div class="imgContainer">
+                    <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E6%91%A9%E7%99%BB%E5%AE%B6%E5%BA%AD&submit=">
+                        <img src="../static/img/modernFamily.jpg" class="vid_img">
+                    </a>
+                    <div class="BottomRightYear">2009</div>
+                </div>
+
+                <h4 class="card-title">Modern Family</h4>
+                <br>
+                <button class="quickFilter" type="button">American</button>
+                <button class="quickFilter" type="button">TV Show</button>
+                <button class="quickFilter" type="button">Drama</button>
+                <button class="quickFilter" type="button">Comedy</button>
+                <br>
+                <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E6%91%A9%E7%99%BB%E5%AE%B6%E5%BA%AD&submit="
+                   class="watchBtn">Watch</a>
+                <a href="https://www.youtube.com/playlist?list=PL7eOlQOUPcajtvn6oz2LP_zZA-yGZe2ie" class="stBtn">
+                    SoundTrack</a>
+                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="../script/myScript.js"></script>-->
+</body>
+</html>
