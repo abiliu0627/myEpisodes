@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Movie Profile</title>
+</head>
+<body>
+<header class="container-fluid">
+    <div class="topRow"> <!--row-->
+        <a href="/">
+            <img src="/img/logo.jpg" class="logo sub" alt="froggo">
+        </a>
+        <a href="/" class="title">My Episodes</a>
+        <div class="topSearch"> <!--col-sm-7-->
+        </div>
+    </div>
+</header>
+
+<!--<div class="mainDescrp">-->
+
+<h class="movieTitle" th:text="${movie.title}"></h>
+
+
+<div class="infoContainer">
+    <img th:attr="src=${movie.avatar}" class="img">
+
+    <div class="textContainer">
+        <button class="quickFilter" type="button">[[${movie.region}]]</button>
+        <button class="quickFilter" type="button">[[${movie.videotype}]]</button>
+        <button class="quickFilter" type="button">[[${movie.genre}]]</button>
+        <a class="btn btn-sm btn-danger" th:href="@{/movies/}+${movie.id}"><i class="fa fa-trash"></i></a>
+        <a class="btn btn-sm btn-primary" href="#" th:href="@{/movie/}+${movie.id}"><i class="fa fa-pencil"></i></a>
+        <br/>
+        <h><span class="header">Rating: </span>[[${movie.rating}]]</h>
+        <br/>
+        <h><span class="header">Released Date: </span>[[${movie.date}]]</h>
+        <br/>
+        <h class="header">Description: </h>
+        <p>[[${movie.description}]]</p>
+        <h class="header">My Review: </h>
+        <p>[[${movie.comment}]]</p>
+
+    </div>
+
+
+</div>
+
+<script src="myScript.js"></script>
+</body>
+</html>

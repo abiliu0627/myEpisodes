@@ -4,7 +4,7 @@
 <head>
     <title>My Episodes</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <script src="../static/myScript.js"></script>
+    <script src="js/myScript.js"></script>
         <div class="topRow">
                 <div id="mySidepanel" class="sidepanel">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -36,7 +36,7 @@
                             <option value="chi">Chinese</option>
                             <option value="jap">Japanese</option>
                             <option value="kor">Korean</option>
-                            <option value="ind">Indian</option>
+                            <option value="ind">Hindi</option>
                         </select>
                     </form>
 
@@ -77,20 +77,28 @@
                     </form>
 
                     <button class="clearBtn" onclick="clearFilters()">Clear All</button>
+                    <a th:href="@{/addmovie/}">
+                        <button class="btn btn-sm btn-primary">+</button>
+                    </a>
 
-                    <img class="sideBarFrog" src="../static/img/sideBarFrog.jpg" class="decor" alt="froggo">
+                    <img class="sideBarFrog" src="img/sideBarFrog.jpg" alt="froggo">
                 </div>
 
                 <button class="openbtn" onclick="openNav()">☰</button>
 
                 <a href="/">
-                    <img src="../static/img/logo.jpg" class="logo" alt="froggo">
+                    <img src="img/logo.jpg" class="logo" alt="froggo">
                 </a>
-                <a href="/" class="title" th:text="${title}">My Episodes</a>
+                <a href="/" class="title">My Episodes</a>
+
+<!--                <div class="logIn">-->
+<!--                    <a href="login.html">Login</a>-->
+<!--                </div>-->
+
                 <div class="topSearch">
                     <div class="search-container">
                         <form>
-                            <input class="type_box" type="text" placeholder=" Search.." name="search">
+                            <input class="type_box" type="text" placeholder=" Search.." name="search" />
                             <button class="search_button" type="submit">Go!</button>
                         </form>
                     </div>
@@ -106,7 +114,7 @@
 
                 <div class="imgContainer">
                     <a href="avatarDescription.html">
-                        <img src="../static/img/Avatar/cover.jfif" class="vid_img">
+                        <img src="img/Avatar/cover.jfif" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2009</div>
                 </div>
@@ -120,7 +128,7 @@
                 <br>
                 <a href="https://www.youtube.com/watch?v=a0CDJZu4M5I" class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/watch?v=fPSBclqSBxQ" class="stBtn">SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()">
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()">
             </div>
         </div>
 
@@ -129,7 +137,7 @@
 
                 <div class="imgContainer">
                     <a href="NBTDescription.html">
-                        <img src="../static/img/nothingButThirty/cover.png" class="vid_img">
+                        <img src="img/nothingButThirty/cover.png" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2020</div>
                 </div>
@@ -143,7 +151,7 @@
                 <br>
                 <a href="https://chinaq.cc/cn200717/" class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/watch?v=29Ts9PYByAU" class="stBtn">SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
             </div>
         </div>
 
@@ -152,7 +160,7 @@
 
                 <div class="imgContainer">
                     <a href="BNADescription.html">
-                        <img src="../static/img/BNA/cover.jpg" class="vid_img">
+                        <img src="img/BNA/cover.jpg" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2020</div>
                 </div>
@@ -166,7 +174,7 @@
                 <a href="https://www.cmcm5.com/dongman/BNA.html" class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/playlist?list=PLwiJoOHUK5f-8pMNC9r6K3FlYYMQK4X1l" class="stBtn">
                     SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
             </div>
         </div>
 
@@ -175,7 +183,7 @@
 
                 <div class="imgContainer">
                     <a href="amelieDescription.html">
-                        <img src="../static/img/Amelie/Cover.jpg" class="vid_img">
+                        <img src="img/Amelie/Cover.jpg" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2001</div>
                 </div>
@@ -190,7 +198,7 @@
                 <a href="https://www.dililitv.com/vplay/NTMyMy0xLTA=.html" class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/watch?v=stNg41SVRzM" class="stBtn">
                     SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
             </div>
         </div>
 
@@ -199,7 +207,7 @@
 
                 <div class="imgContainer">
                     <a href="theFlowerOfEvil.html">
-                        <img src="../static/img/theFlowerOfEvil/Cover.jpg" class="vid_img">
+                        <img src="img/theFlowerOfEvil/Cover.jpg" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2020</div>
                 </div>
@@ -214,7 +222,7 @@
                    class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/watch?v=CIZkZal_iLU&list=RDCIZkZal_iLU&start_radio=1&t=6"
                    class="stBtn">SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
             </div>
         </div>
 
@@ -223,7 +231,7 @@
 
                 <div class="imgContainer">
                     <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E8%BE%9B%E6%99%AE%E6%A3%AE&submit=">
-                        <img src="../static/img/theSimpsons.jpg" class="vid_img">
+                        <img src="img/theSimpsons.jpg" class="vid_img">
                     </a>
                     <div class="BottomRightYear">1989</div>
                 </div>
@@ -238,7 +246,7 @@
                    class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/playlist?list=PLJLNOwjYkQIpK8A7FnLlWDEMxftEmyLqq"
                    class="stBtn">SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
             </div>
         </div>
 
@@ -247,7 +255,7 @@
 
                 <div class="imgContainer">
                     <a href="https://duonaolive.com/play?id=d20a2aa994ddfd9c8da82a983dfc5bccbe25132d5a670df86885adc8386edd6e&episode=0&route=0">
-                        <img src="../static/img/3Idiots.jpg" class="vid_img">
+                        <img src="img/3Idiots.jpg" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2009</div>
                 </div>
@@ -264,7 +272,7 @@
                    class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/results?search_query=3+idiots+soundtrack" class="stBtn">
                     SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
             </div>
         </div>
 
@@ -273,7 +281,7 @@
 
                 <div class="imgContainer">
                     <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E6%91%A9%E7%99%BB%E5%AE%B6%E5%BA%AD&submit=">
-                        <img src="../static/img/modernFamily.jpg" class="vid_img">
+                        <img src="img/modernFamily.jpg" class="vid_img">
                     </a>
                     <div class="BottomRightYear">2009</div>
                 </div>
@@ -289,11 +297,35 @@
                    class="watchBtn">Watch</a>
                 <a href="https://www.youtube.com/playlist?list=PL7eOlQOUPcajtvn6oz2LP_zZA-yGZe2ie" class="stBtn">
                     SoundTrack</a>
-                <img src="../static/img/fav.png" class="favBtn" onclick="favPopup()"/>
+                <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
+            </div>
+        </div>
+
+        <div th:each="movie:${movies}">
+            <div class="card usa show dra com 05 [[${movie.videotype}]]">
+                <div class="card-body">
+
+                    <div class="imgContainer">
+                        <a th:href="@{/movie/profile/}+${movie.id}">
+                            <img th:attr="src=${movie.avatar}" class="vid_img">
+                        </a>
+                        <div class="BottomRightYear">[[${movie.Date}]]</div>
+                    </div>
+
+                    <h4 class="card-title">[[${movie.Title}]]</h4>
+                    <br>
+                    <button class="quickFilter" type="button">[[${movie.region}]]</button>
+                    <button class="quickFilter" type="button">[[${movie.videotype}]]</button>
+                    <button class="quickFilter" type="button">[[${movie.genre}]]</button>
+                    <br>
+                    <a href="https://www.zxzj.me/vodsearch/-------------.html?wd=%E6%91%A9%E7%99%BB%E5%AE%B6%E5%BA%AD&submit="
+                       class="watchBtn">Watch</a>
+                    <a href="https://www.youtube.com/playlist?list=PL7eOlQOUPcajtvn6oz2LP_zZA-yGZe2ie" class="stBtn">
+                        SoundTrack</a>
+                    <img src="img/fav.png" class="favBtn" onclick="favPopup()"/>
+                </div>
             </div>
         </div>
     </div>
-
-    <!--<script src="../script/myScript.js"></script>-->
 </body>
 </html>
