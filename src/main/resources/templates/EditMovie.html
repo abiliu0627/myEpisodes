@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <title>Edit Movie</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/MainPage.css">
+    <link rel="stylesheet" href="/css/AddMovie.css">
 </head>
 <body>
-<main role="main" class="col-md-9 col-lg-10 pt-3 px-4">
-    <!--表单-->
+<div class="topRow"> <!--row-->
+    <a href="/">
+        <img src="/img/logo.jpg" class="logo sub" alt="froggo">
+    </a>
+    <a href="/" class="title">Edit Video Information</a>
+</div>
+
+<div class="addForm">
 
     <form method="post" th:action="@{/movie/}+${movie.id}" enctype="multipart/form-data">
         <!--发送put请求修改员工数据-->
@@ -17,63 +24,70 @@
         2、页面创建一个post表单
         3、创建一个input项，name="_method";值就是我们指定的请求方式
         -->
+
+<!--        TODO: revisit video-->
+
         <input type="hidden" name="_method" value="put"/>
         <input name="id" th:value="${movie.id}" type="hidden"/>
+
         <div class="form-group">
-            <label>Title</label>
-            <input name="title" type="text" class="form-control" placeholder="please input title"
-                   th:value="${movie.title}">
+            <h class="label">Title</h>
+            <input name="title" type="text" class="form-control" placeholder="please input title" th:value="${movie.title}">
         </div>
+
         <div class="form-group">
-            <label>Date</label>
-            <input name="date" type="date" class="form-control" placeholder="please input date"
-                   th:value="${movie.date}">
+            <h class="label">Date</h>
+            <input name="date" type="date" class="form-control" placeholder="please input date" th:value="${movie.date}">
         </div>
+
         <div class="form-group">
-            <label>Rating</label><br>
+            <h class="label">Rating</h>
             <input name="rating" type="int" class="form-control" placeholder="please input Rating 1-10"
                    th:value="${movie.rating}">
         </div>
 
         <div class="form-group">
-            <label>Region</label>
+            <h class="label">Region</h>
             <input name="region" type="text" class="form-control" placeholder="please input region"
                    th:value="${movie.region}">
         </div>
 
         <div class="form-group">
-            <label>Genre</label>
+            <h class="label">Genre</h>
             <input name="genre" type="text" class="form-control" placeholder="please input genre"
                    th:value="${movie.genre}">
         </div>
 
         <div class="form-group">
-            <label>Video Type</label>
+            <h class="label">Video Type</h>
             <input name="videotype" type="text" class="form-control" placeholder="please input video type"
                    th:value="${movie.videotype}">
         </div>
 
         <div class="form-group">
-            <label>Description</label>
-            <input name="description" type="text" class="form-control" placeholder="please input description"
-                   th:value="${movie.description}">
+            <h class="label">Description</h> <br/>
+            <textarea name="description" type="text" class="form-control longInput" placeholder="please input description"
+                      th:text="${movie.description}"></textarea>
         </div>
 
         <div class="form-group">
-            <label>Comment</label>
-            <input name="comment" type="text" class="form-control" placeholder="please input comments"
-                   th:value="${movie.comment}">
+            <h class="label">Comment</h> <br/>
+            <textarea name="comment" type="text" class="form-control longInput" placeholder="please input comments"
+                      th:text="${movie.comment}"></textarea>
         </div>
+
         <div class="form-group">
-            <label>Photo</label>
+            <h class="label">Photo</h>
             <input type="file" name="file" class="form-control" placeholder="photo"/>
         </div>
-        <div class="form-group">
-            <input type="submit" value="Submit">
+
+        <div>
+            <input class="submitBtn" type="submit" value="Submit">
         </div>
 
-
     </form>
-</main>
+</div>
+
+
 </body>
 </html>

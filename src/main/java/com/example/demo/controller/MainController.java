@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.example.demo.service.ImgFileService;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -77,10 +79,9 @@ public class MainController extends ImgFileService {
             movie.setAvatar(prevAvatar);
         }
         movieService.edit(movie);
-        System.out.println("edit movie");
 //        System.out.println(new Date() + "   ====>   " + "student info has been updated");
 //        System.out.println("- - - - - - - - - - - - - - - - - - - - ");
-        return "redirect:/movies";
+        return "redirect:/movie/profile/{id}";
     }
 
     @GetMapping("/movies/{id}")

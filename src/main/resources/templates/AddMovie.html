@@ -5,63 +5,110 @@
     <meta charset="UTF-8">
     <title>Add Movie</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/MainPage.css">
+    <link rel="stylesheet" href="/css/AddMovie.css">
+    <title>Add Movie</title>
 </head>
+
+<!--TODO: checkbox input-->
+
 <body>
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    <div class="topRow"> <!--row-->
+        <a href="/">
+            <img src="/img/logo.jpg" class="logo sub" alt="froggo">
+        </a>
+        <a href="/" class="title">Add Video</a>
+    </div>
+
+    <div class="addForm">
     <form th:action="@{/addmovie}" method="post" enctype="multipart/form-data">
+
         <div class="form-group">
-            <label>Title</label>
+            <h class="label">Title</h>
             <input name="title" type="text" class="form-control" placeholder="please input title" value="Title">
         </div>
 
         <div class="form-group">
-            <label>Date</label>
+            <h class="label">Date</h>
             <input name="date" type="date" class="form-control" placeholder="please input date" value="date">
         </div>
 
         <div class="form-group">
-            <label>Rating</label><br>
+            <h class="label">Rating</h>
             <input name="rating" type="int" class="form-control" placeholder="please input Rating 1-10"
                    value="rating">
         </div>
 
+<!--        <form class="form-group">-->
+<!--            <h class="label">Region</h> <br/>-->
+<!--            <input type="checkbox">American <br/>-->
+<!--            <input type="checkbox">European <br/>-->
+<!--            <input type="checkbox">Chinese <br/>-->
+<!--            <input type="checkbox">Japanese <br/>-->
+<!--            <input type="checkbox">Korean <br/>-->
+<!--            <input type="checkbox">Hindi <br/>-->
+<!--        </form>-->
+
         <div class="form-group">
-            <label>Region</label>
+            <h class="label">Region</h>
             <input name="region" type="text" class="form-control" placeholder="please input region"
                    value="region">
         </div>
 
+<!--        <form class="form-group">-->
+<!--            <h class="label">Genre</h> <br/>-->
+<!--                <input type="checkbox">Action<br/>-->
+<!--                <input type="checkbox">Comedy<br/>-->
+<!--                <input type="checkbox">Thriller<br/>-->
+<!--                <input type="checkbox">Sci-Fi<br/>-->
+<!--                <input type="checkbox">Romance<br/>-->
+<!--                <input type="checkbox">Musical<br/>-->
+<!--                <input type="checkbox">Drama<br/>-->
+<!--                <input type="checkbox">Fantasy<br/>-->
+<!--        </form>-->
+
         <div class="form-group">
-            <label>Genre</label>
+            <h class="label">Genre</h>
             <input name="genre" type="text" class="form-control" placeholder="please input genre"
                    value="genre">
         </div>
 
+
+<!--        <form class="form-group">-->
+<!--            <h class="label">Video Type</h> <br/>-->
+<!--                <input type="checkbox">Movie<br/>-->
+<!--                <input type="checkbox">TV Show<br/>-->
+<!--                <input type="checkbox">Animation<br/>-->
+<!--        </form>-->
+
         <div class="form-group">
-            <label>Video Type</label>
+            <h class="label">Video Type</h>
             <input name="videotype" type="text" class="form-control" placeholder="please input video type"
                    value="type">
         </div>
 
         <div class="form-group">
-            <label>Description</label>
-            <input name="description" type="text" class="form-control" placeholder="please input description"
-                   value="description">
+            <h class="label">Description</h> <br/>
+            <textarea name="description" type="text" class="form-control longInput" placeholder="please input description"
+                      value="description"></textarea>
         </div>
 
         <div class="form-group">
-            <label>Comment</label>
-            <input name="comment" type="text" class="form-control" placeholder="please input comments" value="comment">
+            <h class="label">Comment</h> <br/>
+<!--            <input name="comment" type="text" class="form-control longInput" placeholder="please input comments" value="comment">-->
+            <textarea name="comment" type="text" class="form-control longInput" placeholder="please input comments"
+                      value="comment"></textarea>
         </div>
 
         <div class="form-group">
-            <label>Photo</label>
+            <h class="label">Photo</h>
             <input type="file" name="file" class="form-control" placeholder="photo"/>
         </div>
 
-        <div class="form-group">
-            <input type="submit" value="Submit">
+        <div>
+            <input class="submitBtn" type="submit" value="Submit">
         </div>
     </form>
+    </div>
 </body>
 </html>
