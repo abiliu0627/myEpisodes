@@ -82,6 +82,9 @@ public class MainController extends ImgFileService {
 //        System.out.println(new Date() + "   ====>   " + "student info has been updated");
 //        System.out.println("- - - - - - - - - - - - - - - - - - - - ");
         return "redirect:/movie/profile/{id}";
+
+
+
     }
 
     @GetMapping("/movies/{id}")

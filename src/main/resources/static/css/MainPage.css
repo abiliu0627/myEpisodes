@@ -108,7 +108,7 @@
     padding: 12px 20px 12px 40px;
 }
 
-.search_button{
+#search_button{
     height: 40px;
     width: 70px;
     background-color: #ace600;
@@ -239,18 +239,27 @@
 .imgContainer {
     position: relative;
     color: white;
-}
-
-.BottomRightYear {
-  position: absolute;
-  bottom: 8px;
-  right: 20px;
+    background-color: #00b300;
 }
 
 .BottomRightYear {
     position: absolute;
     bottom: 8px;
+    right: 0px;
+    font-size: 15px;
+}
+
+.rating {
+    position: absolute;
+    bottom: 8px;
     left: 20px;
+    font-size: 15px;
+}
+
+.BottomRightYear {
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
 }
 
 .clearBtn {
