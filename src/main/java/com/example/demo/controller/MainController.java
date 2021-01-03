@@ -60,7 +60,6 @@ public class MainController extends ImgFileService {
         return "EditMovie";
     }
 
-//    TODO: handleSearch
     @RequestMapping(value="/search_title",method=RequestMethod.GET)
     public String searchResults(@RequestParam String search, Model model) {
         System.out.println("title: " + search);
