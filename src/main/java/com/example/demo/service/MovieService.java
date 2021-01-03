@@ -35,4 +35,6 @@ public class MovieService {
     }
 
     public List<Movie> findTop10ByOrderByIdDesc() { return MovieRepository.findTop10ByOrderByIdDesc();}
+
+    public List<Movie> searchByTitle(String value) { return MovieRepository.searchByTitle(value); }
 }

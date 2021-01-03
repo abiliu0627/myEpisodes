@@ -34,6 +34,7 @@ public class Movie implements Avatar{
     @Column //省略默认列名就是属性名
     private String comment;
 
+    @Column
     private String avatar;
 
 

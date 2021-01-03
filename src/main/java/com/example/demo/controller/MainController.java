@@ -7,10 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileSystemUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.example.demo.service.ImgFileService;
@@ -46,7 +43,7 @@ public class MainController extends ImgFileService {
     public String add_Movie(Movie movie, HttpServletRequest request) throws IOException {
 
         if (request instanceof MultipartHttpServletRequest) {
-            // 转型为MultipartHttpReques
+            // 转型为MultipartHttpRequest
             MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
             MultipartFile file = multipartHttpServletRequest.getFile("file");
             processFile(movie, file);
@@ -61,6 +58,15 @@ public class MainController extends ImgFileService {
         Movie movie = movieService.findById(id);
         model.addAttribute("movie", movie);
         return "EditMovie";
+    }
+
+//    TODO: handleSearch
+    @RequestMapping(value="/search_title",method=RequestMethod.GET)
+    public String searchResults(@RequestParam String search, Model model) {
+        System.out.println("title: " + search);
+        List<Movie> movies = movieService.searchByTitle(search);
+        model.addAttribute("movies", movies);
+        return "MainPage";
     }
 
     @PutMapping("/movie/{id}")
