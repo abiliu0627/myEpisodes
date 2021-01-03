@@ -2,7 +2,7 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-
+//hhhhhhhhhhhhhhhh
 @Entity
 @Table(name = "movie")
 public class Movie implements Avatar{
