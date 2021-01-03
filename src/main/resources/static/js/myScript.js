@@ -14,10 +14,21 @@ function favPopup() {
   alert("Added to your favorite!");
 }
 
+// function split() {
+    // alert("split function called, movie.region: " + movie.region);
+    // let i;
+    // for (i = 0; i < movie.region.split(",").length; i++){
+    //     let newBtn = document.createElement("Button");
+    //     newBtn.className = "quickFilter";
+    //     newBtn.type = "button";
+    //     newBtn.innerHTML = movie.region.split(",")[i]
+    //     document.getElementById("tags").appendChild(newBtn)
+//     // }
+//     alert("split");
+// }
 
 
 var slideIndex = 0;
-
 window.onload = function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -37,9 +48,14 @@ window.onload = function showSlides() {
 
 
 
-var types = new Set(['mov', 'show', 'acg']);
-var regions = new Set(['usa', 'eur', 'chi', 'jap', 'kor', 'ind']);
-var genres = new Set(['act', 'com', 'thr', 'rom', 'mus', 'fan', 'sci', 'dra']);
+
+
+var types = new Set(['Movie', 'TV Show', 'Animation']);
+var regions = new Set(['American', 'European', 'Chinese', 'Japanese', 'Korean', 'Hindi']);
+var genres = new Set(['Action', 'Comedy', 'Thriller', 'Romance', 'Musical', 'Fantasy', 'Sci-Fi', 'Drama']);
+// var types = new Set(['mov', 'show', 'acg']);
+// var regions = new Set(['usa', 'eur', 'chi', 'jap', 'kor', 'ind']);
+// var genres = new Set(['act', 'com', 'thr', 'rom', 'mus', 'fan', 'sci', 'dra']);
 var dates = new Set(['20', '15', '10', '05', '00', '90s']);
 var selectedType = '';
 var selectedRegion = '';
@@ -48,7 +64,7 @@ var selectedDate = '';
 
 function filter(criteria, clearAll) {     // all***: clear filters; not all***: delete prev relative filters
     var tags = document.getElementsByClassName('card'); // all cards with assigned video type
-
+    alert("cards num is " + tags.length);
     if (!clearAll) {
         var videoType = document.getElementById(criteria); // all type filters
         var index = videoType.selectedIndex;  // type index
@@ -83,7 +99,7 @@ function filter(criteria, clearAll) {     // all***: clear filters; not all***: 
     for (var i=0; i<tags.length; i++) {
         var tag = tags[i];      // working card
         var fit = true;
-
+        alert("tag.className: " + tag.className + ", region: " + selectedRegion + " result: " + tag.className.search(selectedRegion))
         if (tag.className.search(selectedType) === -1 || tag.className.search(selectedRegion) === -1 ||
         tag.className.search(selectedGenre) === -1 || tag.className.search(selectedDate) === -1){
             $(tag).hide();
